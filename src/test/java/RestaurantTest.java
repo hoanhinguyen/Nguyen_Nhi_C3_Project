@@ -69,6 +69,18 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void calculate_menu_price_should_return_result_of_388(){
+        restaurant.addToMenu("Beef Noodle", 400);
+
+        ArrayList<String> selectedItemNames= new ArrayList<String>();
+        selectedItemNames.add("Sweet corn soup");
+        selectedItemNames.add("Vegetable lasagne");
+
+        int result = restaurant.priceCalculator(selectedItemNames);
+        assertEquals(388, result);
+    }
+
 
 
 }
