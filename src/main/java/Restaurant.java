@@ -72,6 +72,22 @@ public class Restaurant {
         return name;
     }
 
+    public int priceCalculator(ArrayList<String> selectedItemNames) {
+        int totalPrice=0;
 
+        for (Object o1: selectedItemNames) {
+            String selectedItemName = (String) o1;
+            for (Object o2: this.menu) {
+                Item item = (Item) o2;
+                String itemName = item.getName();
+                if(selectedItemName.equals(itemName)) {
+                    totalPrice += item.getPrice();
+                    break;
+                }
+            }
+        }
+
+        return totalPrice;
+    }
 
 }
