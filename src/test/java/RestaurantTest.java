@@ -15,7 +15,7 @@ class RestaurantTest {
     public void setUp() {
         LocalTime openingTime = LocalTime.parse("10:30:00");
         LocalTime closingTime = LocalTime.parse("22:00:00");
-        restaurant = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
     }
@@ -68,19 +68,7 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    @Test
-    public void calculate_menu_price_should_return_result_of_388(){
-        restaurant.addToMenu("Beef Noodle", 400);
-
-        ArrayList<String> selectedItemNames= new ArrayList<String>();
-        selectedItemNames.add("Sweet corn soup");
-        selectedItemNames.add("Vegetable lasagne");
-
-        int result = restaurant.priceCalculator(selectedItemNames);
-        assertEquals(388, result);
-    }
-
+    
 
 
 }
